@@ -9,7 +9,7 @@ tracer added at compile time.
 Feel free to add more dependencies and/or fallback to all dependencies  using `orchestrion pin`.
 
 ```shell
-orchestrion go build .  -o chi-sampling
+orchestrion go build -o chi-sampling .
 ```
 
 ## Tracer configuration
