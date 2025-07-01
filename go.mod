@@ -4,7 +4,6 @@ go 1.23.5
 
 require (
 	github.com/DataDog/orchestrion v1.4.1-0.20250624135327-1c9796d66b0e
-	github.com/go-chi/chi/v5 v5.2.2
 	gopkg.in/DataDog/dd-trace-go.v1 v1.74.2
 )
 
@@ -19,7 +18,7 @@ require (
 	github.com/DataDog/datadog-agent/pkg/util/scrubber v0.66.0 // indirect
 	github.com/DataDog/datadog-agent/pkg/version v0.66.0 // indirect
 	github.com/DataDog/datadog-go/v5 v5.6.0 // indirect
-	github.com/DataDog/dd-trace-go/contrib/go-chi/chi.v5/v2 v2.0.1 // indirect
+	github.com/DataDog/dd-trace-go/contrib/net/http/v2 v2.0.1 // indirect
 	github.com/DataDog/dd-trace-go/v2 v2.0.1 // indirect
 	github.com/DataDog/go-libddwaf/v3 v3.5.4 // indirect
 	github.com/DataDog/go-runtime-metrics-internal v0.0.4-0.20250319104955-81009b9bad14 // indirect

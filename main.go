@@ -7,25 +7,15 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
-
-	"github.com/go-chi/chi/v5"
-	"github.com/go-chi/chi/v5/middleware"
 )
 
 func main() {
-	r := chi.NewRouter()
-	r.Use(middleware.Logger)
-	r.Get("/welcome", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("welcome"))
-	})
-	r.Get("/health", func(w http.ResponseWriter, r *http.Request) {
+	mux := http.NewServeMux()
+	mux.HandleFunc("GET /health", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("healthy"))
 	})
-	r.Get("/ready", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("ready"))
-	})
 
-	srv := &http.Server{Addr: ":8181", Handler: r}
+	srv := &http.Server{Addr: ":8181", Handler: mux}
 
 	quit := make(chan os.Signal, 1)
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
